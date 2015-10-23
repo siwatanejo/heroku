@@ -21,7 +21,8 @@ app.get('/cool', function(request, response) {
 });
 
 app.post('/esendex', function(request, response) {
-  response.send("OKPOST!");
+  var body = request.body;
+  response.send("OKPOST!" + "\n" + body);
 });
 
 app.get('/esendex', function(request, response) {
