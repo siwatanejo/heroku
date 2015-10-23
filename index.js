@@ -21,7 +21,7 @@ app.get('/cool', function(request, response) {
 });
 
 app.post('/esendex', function(request, response) {
-  var body = request.body;
+  var body = request.rawBody;
   response.send("OKPOST2!" + "\n" + body);
 });
 
