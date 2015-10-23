@@ -4,6 +4,25 @@ var app = express();
 
 var sofar = "";
 
+function anyBodyParser(req, res, next) {
+    var data = '';
+    req.setEncoding('utf8');
+    req.on('data', function(chunk) { 
+        data += chunk;
+    });
+    req.on('end', function() {
+        req.rawBody = data;
+        next();
+    });
+}
+
+app.configure(function() {
+  app.use(anyBodyParser);
+});
+
+
+
+
 app.set('port', (process.env.PORT || 5000));
 
 app.use(express.static(__dirname + '/public'));
@@ -21,8 +40,13 @@ app.get('/cool', function(request, response) {
 });
 
 app.post('/esendex', function(request, response) {
-  var body = request.rawBody;
-  response.send("OKPOST2!" + "\n" + body);
+  //var body = request.rawBody;
+  //response.send("OKPOST2!" + "\n" + body);
+
+    console.dir(req.rawBody);
+    res.contentType('application/xml');
+    res.send(req.body, 200);
+
 });
 
 app.get('/esendex', function(request, response) {
