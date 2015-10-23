@@ -22,7 +22,7 @@ app.get('/cool', function(request, response) {
 
 app.post('/esendex', function(request, response) {
   var body = request.body;
-  response.send("OKPOST!" + "\n" + body);
+  response.send("OKPOST2!" + "\n" + body);
 });
 
 app.get('/esendex', function(request, response) {
