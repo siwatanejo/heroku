@@ -2,6 +2,8 @@ var cool = require('cool-ascii-faces');
 var express = require('express');
 var app = express();
 
+var sofar = "";
+
 app.set('port', (process.env.PORT || 5000));
 
 app.use(express.static(__dirname + '/public'));
@@ -16,6 +18,14 @@ app.get('/', function(request, response) {
 
 app.get('/cool', function(request, response) {
   response.send(cool());
+});
+
+app.post('/esendex', function(request, response) {
+  response.send("OKPOST!");
+});
+
+app.get('/esendex', function(request, response) {
+  response.send("OKGET!");
 });
 
 app.listen(app.get('port'), function() {
