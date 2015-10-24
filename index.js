@@ -42,7 +42,7 @@ app.post('/esendex', function(request, response) {
     //console.dir("yeah baby" + request.rawBody);
 //    response.contentType('application/xml');
     //response.send(request.rawBody, 200);
-    response.send("OKPOSTTTTTT");
+    response.send("OKPOSTTTTTT"+request.rawBody);
 
 });
 
