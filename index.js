@@ -36,14 +36,8 @@ app.get('/cool', function(request, response) {
 });
 
 app.post('/esendex', function(request, response) {
-  //var body = request.rawBody;
-  //response.send("OKPOST2!" + "\n" + body);
-
-    //console.dir("yeah baby" + request.rawBody);
-//    response.contentType('application/xml');
-    //response.send(request.rawBody, 200);
-    response.send("OKPOSTTTTTT"+request.rawBody);
-
+  sofar += request.rawBody + "\n";
+  response.send(sofar);
 });
 
 app.get('/esendex', function(request, response) {
