@@ -39,9 +39,9 @@ app.post('/esendex', function(request, response) {
   //var body = request.rawBody;
   //response.send("OKPOST2!" + "\n" + body);
 
-    console.dir(req.rawBody);
-    res.contentType('application/xml');
-    res.send(req.body, 200);
+    console.dir(request.rawBody);
+    response.contentType('application/xml');
+    response.send(request.body, 200);
 
 });
 
