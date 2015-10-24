@@ -16,11 +16,7 @@ function anyBodyParser(req, res, next) {
     });
 }
 
-app.configure(function() {
-  app.use(anyBodyParser);
-});
-
-
+app.use(anyBodyParser);
 
 
 app.set('port', (process.env.PORT || 5000));
