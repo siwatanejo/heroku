@@ -41,7 +41,7 @@ app.post('/esendex', function(request, response) {
 
     console.dir(request.rawBody);
     response.contentType('application/xml');
-    response.send(request.body, 200);
+    response.send(request.rawBody, 200);
 
 });
 
