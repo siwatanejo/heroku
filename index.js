@@ -35,6 +35,9 @@ app.get('/cool', function(request, response) {
   response.send(cool());
 });
 
+// to test http://developers.esendex.com/APIs/Push-Notifications :
+//  curl -X POST --data-urlencode "<status>A note</status>" -H 'Content-Type: application/xml' https://siwatanejo.herokuapp.com/esendex
+// or curl -X POST --data "<status>A note</status>" -H 'Content-Type: application/xml' https://siwatanejo.herokuapp.com/esendex
 app.post('/esendex', function(request, response) {
   sofar += request.rawBody + "\n";
   response.send(sofar);
